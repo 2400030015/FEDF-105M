@@ -1,0 +1,64 @@
+interface CategoryFilterProps {
+  selectedCategory: string;
+  selectedSubject: string;
+  onCategoryChange: (category: string) => void;
+  onSubjectChange: (subject: string) => void;
+}
+
+const categories = [
+  { value: "", label: "All Categories" },
+  { value: "notes", label: "📝 Notes" },
+  { value: "papers", label: "📄 Papers" },
+  { value: "questions", label: "❓ Important Questions" },
+  { value: "other", label: "📚 Other" },
+];
+
+const subjects = [
+  { value: "", label: "All Subjects" },
+  { value: "mathematics", label: "Mathematics" },
+  { value: "physics", label: "Physics" },
+  { value: "chemistry", label: "Chemistry" },
+  { value: "biology", label: "Biology" },
+  { value: "computer-science", label: "Computer Science" },
+  { value: "engineering", label: "Engineering" },
+  { value: "economics", label: "Economics" },
+  { value: "history", label: "History" },
+  { value: "literature", label: "Literature" },
+  { value: "psychology", label: "Psychology" },
+  { value: "other", label: "Other" },
+];
+
+export function CategoryFilter({
+  selectedCategory,
+  selectedSubject,
+  onCategoryChange,
+  onSubjectChange,
+}: CategoryFilterProps) {
+  return (
+    <div className="flex gap-4 flex-wrap">
+      <select
+        value={selectedCategory}
+        onChange={(e) => onCategoryChange(e.target.value)}
+        className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      >
+        {categories.map((category) => (
+          <option key={category.value} value={category.value}>
+            {category.label}
+          </option>
+        ))}
+      </select>
+
+      <select
+        value={selectedSubject}
+        onChange={(e) => onSubjectChange(e.target.value)}
+        className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      >
+        {subjects.map((subject) => (
+          <option key={subject.value} value={subject.value}>
+            {subject.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}

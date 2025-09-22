@@ -6,7 +6,9 @@ import './index.css'
 //import Timerdemo from './Timerdemo'
 //import Form from './Form'
 //import Reactrouter from './Reactrouter'
-import Childtoparent from './Childtoparent'
+//import Childtoparent from './Childtoparent'
+//import Reusable from './Reusable'
+import Reduxdemo from './Reduxdemo'
 //import App2 from './app2.jsx'
 //import App3 from './App3.jsx'
 //import Props_demo from './Props_demo.jsx'
@@ -15,6 +17,6 @@ import Childtoparent from './Childtoparent'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Childtoparent />
+    <Reduxdemo />
   </StrictMode>,
 )
